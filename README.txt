@@ -11,3 +11,7 @@ The closing shield uses the approved artwork with its colours reversed: blue fis
 UX Marine artwork is based on the supplied Noordic N26 photograph. The technical illustration uses transparent white linework and includes LiFePO4 battery cells, solar equipment, power electronics and AI computing hardware.
 
 Technical capability artwork: transparent white pen-and-ink interpretation of the supplied photograph of two people aboard the Noordic N26.
+
+14 October update: shared Casa Mercado / Mercado Ventures website with flying fish story and three blue-and-white flags.
+
+Identity animations: fish glide, shield tilt, and flags ripple briefly on arrival and replay on hover/tap. Motion stops offscreen and when hidden, and respects reduced motion.

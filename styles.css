@@ -16,3 +16,8 @@ figcaption,.feature-signature,.international-footer,.house-latin,.closing-latin,
 
 /* White technical linework sits directly on the navy section. */
 .editorial-wide-photo img{background:transparent;object-fit:contain}
+
+.casa{padding:100px 4%;background:var(--ivory)}.casa-introduction{display:grid;grid-template-columns:1.2fr 1fr;gap:9%;align-items:start}.casa-introduction h2{font-size:clamp(44px,6vw,88px)}.casa-introduction p,.fish-story p{max-width:62ch}.fish-story{display:grid;grid-template-columns:1.2fr 1fr;gap:9%;padding-top:45px;border-top:1px solid var(--rule);margin-top:35px}.fish-story h3{font-size:36px;margin:0}.flag-display{display:grid;grid-template-columns:1.1fr 1fr;gap:65px 9%;align-items:center;margin-top:60px}.flag-display img{width:100%;height:auto;object-fit:contain}.flag-display figcaption{font-size:12px;margin-top:16px;color:var(--blue)}.flag-main{grid-row:1 / span 2}.flag-burgee{max-width:430px}.flag-long{width:100%}.closing-statement{border-top:1px solid var(--rule)}@media(max-width:650px){.casa{padding:65px 6%}.casa-introduction,.fish-story,.flag-display{grid-template-columns:1fr;gap:25px}.casa-introduction h2{font-size:48px}.fish-story h3{font-size:32px}.flag-display{gap:40px;margin-top:40px}.flag-main{grid-row:auto}.flag-burgee{width:85%}}
+/* Finite maritime motion; source artwork remains the accessible fallback. */
+.hero-fish-alone{animation:none;transform-origin:55% 55%}.flag-display figure{position:relative}.flag-wave{position:absolute;left:0;top:-10px;pointer-events:none}.flag-wave[hidden]{display:none}.header-shield,.house-shield-feature{transform-origin:center}
+@media(prefers-reduced-motion:reduce){.flag-wave{display:none!important}.flag-display img{opacity:1!important}}
