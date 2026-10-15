@@ -1,0 +1,21 @@
+MERCADO VENTURES — SEARCH AND SHARING UPDATE
+
+Canonical domain: https://mercado.sg/
+
+Upload the full package into the live site's document root, including the hidden .htaccess file. Preserve any host-specific settings in an existing .htaccess file: merge the canonical redirect rules rather than discarding unrelated configuration. The rules supplied target Apache/LiteSpeed; other hosts need equivalent redirect settings.
+
+Point mercado.sg, www.mercado.sg, mercadoventures.org and www.mercadoventures.org to the same configured deployment. Secondary domains should redirect to https://mercado.sg/. Keep HTTPS certificates valid on every domain before redirecting.
+
+After deployment verify:
+- https://mercado.sg/ returns 200, the approved logo, one canonical URL and the new Open Graph metadata.
+- /robots.txt, /sitemap.xml and /assets/mercado-flying-fish-share-v1.png return 200 without authentication.
+- www and the secondary domains redirect permanently to the canonical domain, without loops.
+- The hosting firewall permits legitimate search and AI crawlers. robots.txt alone cannot override a firewall.
+
+Verify ownership in Google Search Console and Bing Webmaster Tools. Submit https://mercado.sg/sitemap.xml and request indexing of the homepage. Do not fabricate verification tags; use the tokens these services issue. Keep the accounts for coverage and performance monitoring.
+
+The share image is a 1200 x 630 PNG containing only the white flying fish emblem and its star on #002FA7. Open Graph and large-image Twitter cards reference this single image. Sharing platforms may cache older previews or choose a different rendering; refresh their cached preview after deployment.
+
+llms.txt is an optional factual reading aid, not a ranking or indexing mechanism. Google AI visibility follows ordinary search eligibility and useful content. No markup guarantees rankings or AI citations.
+
+Live audit before this package: mercado.sg and mercadoventures.org returned older duplicate HTML; robots.txt and sitemap.xml returned 404. This source update is not proof of a live deployment.

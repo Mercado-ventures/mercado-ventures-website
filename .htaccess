@@ -1,0 +1,9 @@
+# Canonical domain for Apache / LiteSpeed hosting.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www\.mercado\.sg|mercadoventures\.org|www\.mercadoventures\.org)$ [NC]
+RewriteRule ^ https://mercado.sg%{REQUEST_URI} [R=301,L,NE]
+RewriteCond %{HTTP_HOST} ^mercado\.sg$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://mercado.sg%{REQUEST_URI} [R=301,L,NE]
+</IfModule>
