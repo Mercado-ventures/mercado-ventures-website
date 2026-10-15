@@ -24,5 +24,5 @@ figcaption,.feature-signature,.international-footer,.house-latin,.closing-latin,
 
 .casa .fish-story{margin-top:0;padding-top:0;border-top:0}.fish-story h2{font-size:clamp(40px,5vw,72px);margin:0}
 
-/* Shield-only header with restored spacing. */
-.site-header{min-height:0;padding:22px 4%;border-bottom:0}.header-shield-only{display:block;width:42px;height:54px;object-fit:contain}@media(max-width:650px){.site-header{min-height:0;padding:18px 6%}.header-shield-only{width:34px;height:44px}}
+/* Final approved header identity. */
+.site-header{min-height:0;padding:22px 4%;border-bottom:0}.header-main-logo{display:block;width:300px;height:auto}@media(max-width:650px){.site-header{min-height:0;padding:18px 6%}.header-main-logo{width:245px}}
