@@ -1,21 +1,28 @@
-MERCADO VENTURES — SEARCH AND SHARING UPDATE
+MERCADO VENTURES — AUDITED RELEASE, 17 OCTOBER 2026
 
 Canonical domain: https://mercado.sg/
+No build is required. The ZIP contains index.html at its root.
 
-Upload the full package into the live site's document root, including the hidden .htaccess file. Preserve any host-specific settings in an existing .htaccess file: merge the canonical redirect rules rather than discarding unrelated configuration. The rules supplied target Apache/LiteSpeed; other hosts need equivalent redirect settings.
+DEPLOY
+Upload all packaged files and the assets folder to the live document root (usually public_html), including hidden .htaccess, sitemap.xml, robots.txt and llms.txt. Back up the current deployment first. Merge unrelated host-specific settings from an existing .htaccess rather than discarding them. The supplied rules were tested on local Apache 2.4.66; production Hostinger/LiteSpeed behavior still needs checking. Ensure certificates are valid on every host before redirecting.
 
-Point mercado.sg, www.mercado.sg, mercadoventures.org and www.mercadoventures.org to the same configured deployment. Secondary domains should redirect to https://mercado.sg/. Keep HTTPS certificates valid on every domain before redirecting.
+IMPORTANT LIVE FINDING
+On 17 October 2026, https://mercado.sg/sitemap.xml returned HTTP 404 even though a valid sitemap existed in GitHub. The homepage and robots.txt were live. The www homepage and /index.html also returned duplicate 200 pages. Updating GitHub alone does not establish that these hosting issues are resolved.
 
-After deployment verify:
-- https://mercado.sg/ returns 200, the approved logo, one canonical URL and the new Open Graph metadata.
-- /robots.txt, /sitemap.xml and /assets/mercado-flying-fish-share-v1.png return 200 without authentication.
-- www and the secondary domains redirect permanently to the canonical domain, without loops.
-- The hosting firewall permits legitimate search and AI crawlers. robots.txt alone cannot override a firewall.
+AFTER UPLOAD
+1. Confirm https://mercado.sg/ loads the approved logo, drawings, fonts and finite animations on mobile and desktop.
+2. Confirm https://mercado.sg/sitemap.xml returns HTTP 200 and XML, rather than a branded HTML error page. Check that its six image URLs also return 200.
+3. Confirm /robots.txt and /llms.txt return 200. Confirm the fish-only /assets/mercado-flying-fish-share-v1.png returns 200 and remains 1200 x 630.
+4. Confirm https://www.mercado.sg/ and https://mercado.sg/index.html permanently redirect to https://mercado.sg/. Secondary mercadoventures.org hosts should redirect to equivalent canonical paths, retaining query strings. Check for redirect loops with the production proxy/HTTPS settings.
+5. Confirm HTML is served as text/html; charset=UTF-8, WebP as image/webp and new fonts as font/woff2. Clear the host/CDN cache after deployment.
+6. In the already-created Google Search Console property, inspect the homepage and the existing submitted https://mercado.sg/sitemap.xml. Retry/resubmit the sitemap once it is publicly 200; request homepage indexing if needed. Check Google's selected canonical and any reported exclusions.
 
-Verify ownership in Google Search Console and Bing Webmaster Tools. Submit https://mercado.sg/sitemap.xml and request indexing of the homepage. Do not fabricate verification tags; use the tokens these services issue. Keep the accounts for coverage and performance monitoring.
+CHANGES IN THIS RELEASE
+- Six drawing sets use responsive transparent-capable WebP derivatives. Full-size files are 83.2% smaller in total than the original PNG set.
+- Four genuine WOFF2 fonts replace mislabeled TrueType files. Fonts use font-display: swap.
+- Intrinsic image dimensions, mobile label/header spacing, more readable small print, a keyboard skip link and a 44 px back-to-top target.
+- Canonical redirects, explicit UTF-8, conservative MIME/caching and defensive response headers.
+- Approved copy, logo artwork, exact #002FA7, portfolio and fish-only social artwork are preserved.
 
-The share image is a 1200 x 630 PNG containing only the white flying fish emblem and its star on #002FA7. Open Graph and large-image Twitter cards reference this single image. Sharing platforms may cache older previews or choose a different rendering; refresh their cached preview after deployment.
-
-llms.txt is an optional factual reading aid, not a ranking or indexing mechanism. Google AI visibility follows ordinary search eligibility and useful content. No markup guarantees rankings or AI citations.
-
-Live audit before this package: mercado.sg and mercadoventures.org returned older duplicate HTML; robots.txt and sitemap.xml returned 404. This source update is not proof of a live deployment.
+SEARCH AND AI
+Crawl permissions, readable HTML, factual structured data, canonical metadata and sharing tags are present. llms.txt is an optional factual reading aid; it is not a ranking or indexing mechanism. robots.txt cannot override a hosting firewall. No markup, audit or sitemap guarantees Google indexing, rankings or AI citations. Confirm actual coverage and impressions in Search Console; real crawler visits require server logs.

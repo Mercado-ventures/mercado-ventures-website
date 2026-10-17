@@ -1,9 +1,30 @@
-# Canonical domain for Apache / LiteSpeed hosting.
+# Mercado Ventures static hosting (Apache / LiteSpeed).
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .xml .txt .svg
+AddType font/woff2 .woff2
 <IfModule mod_rewrite.c>
 RewriteEngine On
+# Consolidate visible index.html without redirecting internal DirectoryIndex handling.
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]) [NC]
+RewriteRule ^index\.html$ https://mercado.sg/ [R=301,L]
 RewriteCond %{HTTP_HOST} ^(www\.mercado\.sg|mercadoventures\.org|www\.mercadoventures\.org)$ [NC]
 RewriteRule ^ https://mercado.sg%{REQUEST_URI} [R=301,L,NE]
 RewriteCond %{HTTP_HOST} ^mercado\.sg$ [NC]
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://mercado.sg%{REQUEST_URI} [R=301,L,NE]
+</IfModule>
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+<FilesMatch "\.(html|xml|txt)$">
+Header set Cache-Control "no-cache"
+</FilesMatch>
+</IfModule>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/svg+xml "access plus 1 month"
+ExpiresByType font/woff2 "access plus 1 month"
 </IfModule>

@@ -26,3 +26,12 @@ figcaption,.feature-signature,.international-footer,.house-latin,.closing-latin,
 
 /* Final approved header identity. */
 .site-header{min-height:0;padding:22px 4%;border-bottom:0}.header-main-logo{display:block;width:300px;height:auto}@media(max-width:650px){.site-header{min-height:0;padding:18px 6%}.header-main-logo{width:245px}}
+
+/* Audit refinements: readable small print, clear mobile spacing and keyboard access. */
+.site-header{gap:24px}.header-identifier{flex:none}
+.skip-link{position:absolute;top:12px;left:4%;z-index:20;padding:12px 18px;background:var(--blue);color:#fff;transform:translateY(-180%)}
+.skip-link:focus{transform:none;outline:2px solid var(--black);outline-offset:3px}
+figcaption,.feature-signature,.international-footer,.house-latin,.closing-latin,.art-label,.header-identifier,.international-meta,footer{font-size:12px}
+footer>a{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:650px){.hero-art{flex-direction:column;align-items:center;justify-content:flex-start;gap:16px}.art-label{position:static;align-self:flex-end;margin:0}.hero-fish-alone{flex:none}.header-identifier{font-size:11px}}
+@media(max-width:360px){.header-identifier{display:none}}
