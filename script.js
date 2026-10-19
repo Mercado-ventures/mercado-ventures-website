@@ -11,51 +11,17 @@ document.getElementById('year').textContent = new Date().getFullYear();
     state.cancel();
     active.delete(img);
   }
+  // Animate the SVG itself so contours stay vector-sharp at every pixel density.
   function wave(img) {
-    const figure = img.closest('figure');
-    let canvas = figure.querySelector('canvas');
-    if (!canvas) {
-      canvas = document.createElement('canvas');
-      canvas.className = 'flag-wave';
-      canvas.setAttribute('aria-hidden','true');
-      figure.insertBefore(canvas, img);
-    }
-    const rect = img.getBoundingClientRect();
-    const dpr = Math.min(devicePixelRatio || 1,2);
-    const pad = 10;
-    canvas.width = Math.round(rect.width*dpr);
-    canvas.height = Math.round((rect.height+pad*2)*dpr);
-    canvas.style.width = rect.width+'px';
-    canvas.style.height = (rect.height+pad*2)+'px';
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    ctx.scale(dpr,dpr);
-    const source=document.createElement("canvas");
-    source.width=Math.round(rect.width*dpr);
-    source.height=Math.round(rect.height*dpr);
-    source.getContext("2d").drawImage(img,0,0,source.width,source.height);
-    let frame, start;
-    const reset = () => { cancelAnimationFrame(frame); canvas.hidden=true; img.style.opacity=''; };
-    canvas.hidden=false;
-    img.style.opacity='0';
-    active.set(img,{cancel:reset});
-    function draw(now) {
-      start ??= now;
-      const t = (now-start)/4600;
-      if(t>=1 || reduced.matches || document.hidden || !visible.has(img)){reset();active.delete(img);return;}
-      ctx.clearRect(0,0,rect.width,rect.height+pad*2);
-      const envelope = Math.sin(Math.PI*t);
-      const strips = 64;
-      for(let i=0;i<strips;i++) {
-        const u=i/strips;
-        const x=rect.width*u;
-        const width=rect.width/strips;
-        const displacement=Math.sin(u*Math.PI*3-t*Math.PI*7)*7*u*envelope;
-        ctx.drawImage(source,source.width*u,0,source.width/strips,source.height,x,pad+displacement,width+.6,rect.height);
-      }
-      frame=requestAnimationFrame(draw);
-    }
-    frame=requestAnimationFrame(draw);
+    const animation = img.animate([
+      {transform:'perspective(1000px) rotateY(0deg) skewY(0deg)'},
+      {transform:'perspective(1000px) rotateY(-5deg) skewY(-.6deg)',offset:.28},
+      {transform:'perspective(1000px) rotateY(3deg) skewY(.4deg)',offset:.6},
+      {transform:'perspective(1000px) rotateY(-1deg) skewY(-.2deg)',offset:.82},
+      {transform:'perspective(1000px) rotateY(0deg) skewY(0deg)'}
+    ],{duration:4600,easing:'ease-in-out'});
+    active.set(img,{cancel:()=>animation.cancel()});
+    animation.onfinish=()=>active.delete(img);
   }
   function play(img) {
     stop(img);
