@@ -1,4 +1,4 @@
-MERCADO VENTURES — AUDITED RELEASE, 17 OCTOBER 2026
+MERCADO VENTURES — PORTFOLIO UPDATE, 19 OCTOBER 2026
 
 Canonical domain: https://mercado.sg/
 No build is required. The ZIP contains index.html at its root.
@@ -11,13 +11,16 @@ On 17 October 2026, https://mercado.sg/sitemap.xml returned HTTP 404 even though
 
 AFTER UPLOAD
 1. Confirm https://mercado.sg/ loads the approved logo, drawings, fonts and finite animations on mobile and desktop.
-2. Confirm https://mercado.sg/sitemap.xml returns HTTP 200 and XML, rather than a branded HTML error page. Check that its six image URLs also return 200.
+2. Confirm https://mercado.sg/sitemap.xml returns HTTP 200 and XML, rather than a branded HTML error page. Check that its seven image URLs also return 200.
 3. Confirm /robots.txt and /llms.txt return 200. Confirm the fish-only /assets/mercado-flying-fish-share-v1.png returns 200 and remains 1200 x 630.
 4. Confirm https://www.mercado.sg/ and https://mercado.sg/index.html permanently redirect to https://mercado.sg/. Secondary mercadoventures.org hosts should redirect to equivalent canonical paths, retaining query strings. Check for redirect loops with the production proxy/HTTPS settings.
 5. Confirm HTML is served as text/html; charset=UTF-8, WebP as image/webp and new fonts as font/woff2. Clear the host/CDN cache after deployment.
 6. In the already-created Google Search Console property, inspect the homepage and the existing submitted https://mercado.sg/sitemap.xml. Retry/resubmit the sitemap once it is publicly 200; request homepage indexing if needed. Check Google's selected canonical and any reported exclusions.
 
 CHANGES IN THIS RELEASE
+- Casa Mercado wardrobe feature and direct link to casamercado.club.
+- UX Habitat replaces the standalone Polska Marine entry; Polska Marine is described under this umbrella.
+- Portfolio structured data, search descriptions, llms.txt and sitemap image locations match the updated content.
 - Six drawing sets use responsive transparent-capable WebP derivatives. Full-size files are 83.2% smaller in total than the original PNG set.
 - Four genuine WOFF2 fonts replace mislabeled TrueType files. Fonts use font-display: swap.
 - Intrinsic image dimensions, mobile label/header spacing, more readable small print, a keyboard skip link and a 44 px back-to-top target.
