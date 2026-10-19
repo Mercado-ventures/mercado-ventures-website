@@ -36,7 +36,6 @@ footer>a{display:inline-flex;align-items:center;min-height:44px}
 @media(max-width:650px){.hero-art{flex-direction:column;align-items:center;justify-content:flex-start;gap:16px}.art-label{position:static;align-self:flex-end;margin:0}.hero-fish-alone{flex:none}.header-identifier{font-size:11px}}
 @media(max-width:360px){.header-identifier{display:none}}
 
-/* Portfolio websites: clear, keyboard-accessible onward links. */
-.portfolio-site-link{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:310px;min-height:48px;margin-top:20px;border-bottom:1px solid var(--blue);color:var(--blue);font-size:14px;line-height:1.5}
-.portfolio-site-link svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;transition:transform .25s ease}
-.portfolio-site-link:hover svg{transform:translate(2px,-2px)}
+/* Business titles are the sole onward links within each portfolio entry. */
+.portfolio-title-link{color:inherit;transition:color .2s ease}
+.portfolio-title-link:hover,.portfolio-title-link:focus-visible{color:var(--blue)}
