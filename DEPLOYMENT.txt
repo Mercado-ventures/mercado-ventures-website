@@ -1,31 +1,15 @@
-MERCADO VENTURES — PORTFOLIO UPDATE, 19 OCTOBER 2026
+MERCADO VENTURES — VERCEL MIGRATION, 19 OCTOBER 2026
 
+Public Vercel site: https://mercado-ventures.vercel.app/
 Canonical domain: https://mercado.sg/
-No build is required. The ZIP contains index.html at its root.
+Project: mercado-ventures / Eugene's projects.
 
-DEPLOY
-Upload all packaged files and the assets folder to the live document root (usually public_html), including hidden .htaccess, sitemap.xml, robots.txt and llms.txt. Back up the current deployment first. Merge unrelated host-specific settings from an existing .htaccess rather than discarding them. The supplied rules were tested on local Apache 2.4.66; production Hostinger/LiteSpeed behavior still needs checking. Ensure certificates are valid on every host before redirecting.
+Vercel production deployment is READY. The owner is applying DNS changes manually; custom-domain cutover and certificate readiness must be checked after those changes. See VERCEL-MIGRATION.md for exact DNS values and the verification procedure.
 
-IMPORTANT LIVE FINDING
-On 17 October 2026, https://mercado.sg/sitemap.xml returned HTTP 404 even though a valid sitemap existed in GitHub. The homepage and robots.txt were live. The www homepage and /index.html also returned duplicate 200 pages. Updating GitHub alone does not establish that these hosting issues are resolved.
+Build: node scripts/build-static.mjs
+Published directory: dist/
+The build copies only required public files. No dependency installation or runtime server is needed. vercel.json defines redirects, UTF-8 types and cache/security headers. The old Apache .htaccess is not used on Vercel.
 
-AFTER UPLOAD
-1. Confirm https://mercado.sg/ loads the approved logo, drawings, fonts and finite animations on mobile and desktop.
-2. Confirm https://mercado.sg/sitemap.xml returns HTTP 200 and XML, rather than a branded HTML error page. Check that its seven image URLs also return 200.
-3. Confirm /robots.txt and /llms.txt return 200. Confirm the fish-only /assets/mercado-flying-fish-share-v1.png returns 200 and remains 1200 x 630.
-4. Confirm https://www.mercado.sg/ and https://mercado.sg/index.html permanently redirect to https://mercado.sg/. Secondary mercadoventures.org hosts should redirect to equivalent canonical paths, retaining query strings. Check for redirect loops with the production proxy/HTTPS settings.
-5. Confirm HTML is served as text/html; charset=UTF-8, WebP as image/webp and new fonts as font/woff2. Clear the host/CDN cache after deployment.
-6. In the already-created Google Search Console property, inspect the homepage and the existing submitted https://mercado.sg/sitemap.xml. Retry/resubmit the sitemap once it is publicly 200; request homepage indexing if needed. Check Google's selected canonical and any reported exclusions.
+The portfolio includes UX Marine, Boat Sparky, UX Habitat, Neptune Tech and Casa Mercado. Polska Marine is described under UX Habitat. Approved artwork, exact #002FA7 and the fish-only shared preview remain intact.
 
-CHANGES IN THIS RELEASE
-- Casa Mercado wardrobe feature and direct link to casamercado.club.
-- UX Habitat replaces the standalone Polska Marine entry; Polska Marine is described under this umbrella.
-- Portfolio structured data, search descriptions, llms.txt and sitemap image locations match the updated content.
-- Six drawing sets use responsive transparent-capable WebP derivatives. Full-size files are 83.2% smaller in total than the original PNG set.
-- Four genuine WOFF2 fonts replace mislabeled TrueType files. Fonts use font-display: swap.
-- Intrinsic image dimensions, mobile label/header spacing, more readable small print, a keyboard skip link and a 44 px back-to-top target.
-- Canonical redirects, explicit UTF-8, conservative MIME/caching and defensive response headers.
-- Approved copy, logo artwork, exact #002FA7, portfolio and fish-only social artwork are preserved.
-
-SEARCH AND AI
-Crawl permissions, readable HTML, factual structured data, canonical metadata and sharing tags are present. llms.txt is an optional factual reading aid; it is not a ranking or indexing mechanism. robots.txt cannot override a hosting firewall. No markup, audit or sitemap guarantees Google indexing, rankings or AI citations. Confirm actual coverage and impressions in Search Console; real crawler visits require server logs.
+Automatic GitHub deployments are disconnected pending user authorization for the repository integration. Deploy through the existing authorized Vercel CLI workflow until then. Keep .env* and .vercel/ local and ignored. Never commit credentials.

@@ -1,0 +1,8 @@
+.git
+outputs
+dist
+.DS_Store
+.htaccess
+.env*
+assets/drawing-*.png
+assets/font-*.woff2
