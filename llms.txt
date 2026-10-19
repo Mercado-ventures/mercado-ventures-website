@@ -1,15 +1,28 @@
 # Mercado Ventures
 
-> Mercado Ventures Pte. Ltd. is a Singapore-based enterprise group working across business development, marine engineering, specialist maritime services, connected technology and the Casa Mercado lifestyle brand.
+> Mercado Ventures is a Singapore-based enterprise group working across marine engineering, vessel development, maritime services, connected technology, and Casa Mercado clothing and accessories.
 
 Canonical website: https://mercado.sg/
 
-## Selected businesses and development initiatives
+## About
 
-- [Casa Mercado](https://casamercado.club/): The House wardrobe, with clothing and accessories including printed shirts, crew essentials, hats, bags and canvas shoes. Website: https://casamercado.club/.
-- [Neptune Tech](https://neptunetech.org/): Initiatives exploring marine communications, remote monitoring and connected infrastructure.
-- [UX Habitat](https://uxhabitat.com/): A marine group spanning vessel development, onboard engineering and specialist services. Polska Marine sits within this umbrella, providing vessel registration and maritime administration. Website: https://uxhabitat.com/.
+Mercado Ventures brings together operating businesses and development initiatives across practical and technical fields. Its work includes business development, product work, specialist service delivery, engineering, and connected systems. The website describes the group and its selected initiatives; it does not publish investment-performance or assets-under-management claims.
+
+## Selected businesses and initiatives
+
+- [Casa Mercado](https://casamercado.club/): The House wardrobe, including printed shirts, crew essentials, hats, bags, and canvas shoes.
+- [Neptune Tech](https://neptunetech.org/): Initiatives exploring marine communications, remote monitoring, and connected infrastructure.
+- [UX Habitat](https://uxhabitat.com/): A marine group bringing together vessel development, onboard engineering, and specialist services. Polska Marine sits within this umbrella and provides vessel registration and maritime administration.
 - [UX Marine](https://uxmarine.com/): Marine product and vessel development, including the Noordic range.
-- [Boat Sparky](https://boatsparky.sg/): Marine electrical engineering, energy systems and systems integration.
+- [Boat Sparky](https://boatsparky.sg/): Marine electrical engineering, diagnostics, energy systems, and systems integration.
 
-Corporate and commercial relationships vary. This list does not imply that every business is a subsidiary. The website is the source of the descriptions; it provides no investment-performance or assets-under-management claims.
+Corporate and commercial relationships vary; this list does not mean every initiative is a subsidiary. For service details, use each business's own website. The descriptions here are a concise guide to Mercado Ventures and should be attributed to this page when cited.
+
+## Key subjects
+
+Singapore enterprise group; marine engineering; vessel and product development; maritime services; vessel registration and maritime administration; connected marine technology; marine communications; remote monitoring; marine electrical systems; Casa Mercado clothing and accessories.
+
+## Discovery files
+
+- [XML sitemap](https://mercado.sg/sitemap.xml)
+- [Robots policy](https://mercado.sg/robots.txt)
